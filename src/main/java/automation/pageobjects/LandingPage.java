@@ -33,6 +33,9 @@ public class LandingPage extends AbstractComponent{
 	@FindBy(id = "login")
 	WebElement login;
 	
+	@FindBy(css = "[class*='flyInOut']")
+	WebElement errorMsg;
+	
 	//Login method
 	public ProductCatalogue loginApplication(String email, String password) {
 		userEmail.sendKeys(email);
@@ -40,6 +43,11 @@ public class LandingPage extends AbstractComponent{
 		login.click();
 		//this will land you in the product catalogue page, so let us create the object in this method itself. 
 		return new ProductCatalogue(driver);
+	}
+	
+	public String getErrorMessage() {
+		waitForWebElementToAppear(errorMsg);
+		return errorMsg.getText();
 	}
 	
 	public void goTo() {

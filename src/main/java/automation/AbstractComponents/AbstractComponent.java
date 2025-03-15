@@ -37,6 +37,12 @@ public class AbstractComponent {
 		//By locator By.cssSelector(".mb-3")
 		wait.until(ExpectedConditions.visibilityOfElementLocated(findBy));
 	}
+	public void waitForWebElementToAppear(WebElement findBy)
+	{
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		//By locator By.cssSelector(".mb-3")
+		wait.until(ExpectedConditions.visibilityOf(findBy));
+	}
 	
 	public void waitForElementToDisappear(WebElement findBY) throws Exception {
 		Thread.sleep(2000);
