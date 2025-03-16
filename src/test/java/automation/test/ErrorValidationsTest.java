@@ -9,10 +9,10 @@ import automation.pageobjects.ProductCatalogue;
 
 public class ErrorValidationsTest extends BaseTest{ 
 	
-	@Test
+	@Test(groups= {"ErrorHandling"})
 	public void submitOrder() throws Exception {
 		landingPage.loginApplication("taro@gmail.com", "Testttaro23");
-		Assert.assertEquals("Incorrect email or password", landingPage.getErrorMessage());
+		Assert.assertEquals("Incorrect email or password.", landingPage.getErrorMessage());
 	}
 	
 	@Test

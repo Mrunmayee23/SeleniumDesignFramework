@@ -7,7 +7,7 @@ import automation.TestComponents.BaseTest;
 import automation.pageobjects.CartPage;
 import automation.pageobjects.CheckoutPage;
 import automation.pageobjects.ConfirmationPage;
-import automation.pageobjects.LandingPage;
+import automation.pageobjects.OrderPage;
 import automation.pageobjects.ProductCatalogue;
 
 
@@ -30,5 +30,12 @@ public class SubmitOrderTest extends BaseTest{
 		ConfirmationPage confirmPage = checkoutPage.SubmitOrder();
 		
 		Assert.assertTrue(confirmPage.verifyConfirmationMessage().equalsIgnoreCase("Thankyou for the order."));
+	}
+	
+	@Test(dependsOnMethods= {"submitOrder"})
+	public void OrderHistoryTest() {
+		ProductCatalogue productCatalogue = landingPage.loginApplication("test.sakura@gmail.com", "Sakura@23");
+		OrderPage orderPage = productCatalogue.goToOrdersPage();
+		Assert.assertTrue(orderPage.verifyOrderDisplay(productName));
 	}
 }
