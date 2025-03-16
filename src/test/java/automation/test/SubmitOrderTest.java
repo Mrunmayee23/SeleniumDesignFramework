@@ -1,6 +1,8 @@
 package automation.test;
 
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -44,16 +46,18 @@ public class SubmitOrderTest extends BaseTest{
 	
 	
 	@DataProvider
-	public Object[][] getData() {
-		HashMap<String, String> hashmap = new HashMap<String, String> ();
-		hashmap.put("email","test.sakura@gmail.com");
-		hashmap.put("password","Sakura@23");
-		hashmap.put("productName", "ZARA COAT 3");
-		
-		HashMap<String, String> hashmap2 = new HashMap<String, String> ();
-		hashmap2.put("email","taro@gmail.com");
-		hashmap2.put("password","Testtaro23");
-		hashmap2.put("productName",  "ADIDAS ORIGINAL");
-		return new Object[][] {{hashmap}, {hashmap2}};
+	public Object[][] getData() throws IOException {
+		List<HashMap<String, String>> data = getJsonDataToMap(System.getProperty("user.dir") +  "\\src\\test\\java\\automation\\data\\PurchaseOrder.json");
+		return new Object[][] {{data.get(0)}, {data.get(1)}};
 	}
 }
+
+//HashMap<String, String> hashmap = new HashMap<String, String> ();
+//hashmap.put("email","test.sakura@gmail.com");
+//hashmap.put("password","Sakura@23");
+//hashmap.put("productName", "ZARA COAT 3");
+//
+//HashMap<String, String> hashmap2 = new HashMap<String, String> ();
+//hashmap2.put("email","taro@gmail.com");
+//hashmap2.put("password","Testtaro23");
+//hashmap2.put("productName",  "ADIDAS ORIGINAL");

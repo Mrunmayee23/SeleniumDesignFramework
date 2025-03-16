@@ -2,21 +2,21 @@
 <testng-results ignored="3" total="5" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-16T22:49:00 JST" name="Suite" finished-at="2025-03-16T22:50:19 JST" duration-ms="78471">
+  <suite started-at="2025-03-16T23:41:27 JST" name="Suite" finished-at="2025-03-16T23:42:48 JST" duration-ms="80936">
     <groups>
       <group name="Purchase">
-        <method signature="SubmitOrderTest.submitOrder(java.util.HashMap)[pri:0, instance:automation.test.SubmitOrderTest@68c9133c]" name="submitOrder" class="automation.test.SubmitOrderTest"/>
+        <method signature="SubmitOrderTest.submitOrder(java.util.HashMap)[pri:0, instance:automation.test.SubmitOrderTest@5b218417]" name="submitOrder" class="automation.test.SubmitOrderTest"/>
       </group> <!-- Purchase -->
     </groups>
-    <test started-at="2025-03-16T22:49:00 JST" name="Error Validation Test" finished-at="2025-03-16T22:49:00 JST" duration-ms="19">
+    <test started-at="2025-03-16T23:41:27 JST" name="Error Validation Test" finished-at="2025-03-16T23:41:27 JST" duration-ms="16">
     </test> <!-- Error Validation Test -->
-    <test started-at="2025-03-16T22:49:00 JST" name="Submit Order Test" finished-at="2025-03-16T22:50:19 JST" duration-ms="78471">
+    <test started-at="2025-03-16T23:41:27 JST" name="Submit Order Test" finished-at="2025-03-16T23:42:48 JST" duration-ms="80936">
       <class name="automation.test.SubmitOrderTest">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:automation.test.SubmitOrderTest@68c9133c]" started-at="2025-03-16T22:49:00 JST" name="launchApplication" finished-at="2025-03-16T22:49:35 JST" duration-ms="34618" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:automation.test.SubmitOrderTest@5b218417]" started-at="2025-03-16T23:41:28 JST" name="launchApplication" finished-at="2025-03-16T23:42:04 JST" duration-ms="36589" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:automation.test.SubmitOrderTest@68c9133c]" started-at="2025-03-16T22:49:35 JST" name="submitOrder" data-provider="getData" finished-at="2025-03-16T22:49:39 JST" duration-ms="4547" status="PASS">
+        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:automation.test.SubmitOrderTest@5b218417]" started-at="2025-03-16T23:42:04 JST" name="submitOrder" data-provider="getData" finished-at="2025-03-16T23:42:09 JST" duration-ms="4849" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -27,15 +27,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitOrder -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:automation.test.SubmitOrderTest@68c9133c]" started-at="2025-03-16T22:49:39 JST" name="tearDown" finished-at="2025-03-16T22:49:40 JST" duration-ms="126" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:automation.test.SubmitOrderTest@5b218417]" started-at="2025-03-16T23:42:09 JST" name="tearDown" finished-at="2025-03-16T23:42:09 JST" duration-ms="141" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:automation.test.SubmitOrderTest@68c9133c]" started-at="2025-03-16T22:49:40 JST" name="launchApplication" finished-at="2025-03-16T22:50:14 JST" duration-ms="34197" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:automation.test.SubmitOrderTest@5b218417]" started-at="2025-03-16T23:42:09 JST" name="launchApplication" finished-at="2025-03-16T23:42:43 JST" duration-ms="34122" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:automation.test.SubmitOrderTest@68c9133c]" started-at="2025-03-16T22:50:14 JST" name="submitOrder" data-provider="getData" finished-at="2025-03-16T22:50:19 JST" duration-ms="4757" status="PASS">
+        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:automation.test.SubmitOrderTest@5b218417]" started-at="2025-03-16T23:42:43 JST" name="submitOrder" data-provider="getData" finished-at="2025-03-16T23:42:48 JST" duration-ms="4714" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -46,7 +46,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitOrder -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:automation.test.SubmitOrderTest@68c9133c]" started-at="2025-03-16T22:50:19 JST" name="tearDown" finished-at="2025-03-16T22:50:19 JST" duration-ms="125" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:automation.test.SubmitOrderTest@5b218417]" started-at="2025-03-16T23:42:48 JST" name="tearDown" finished-at="2025-03-16T23:42:48 JST" duration-ms="105" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
