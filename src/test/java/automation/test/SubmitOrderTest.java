@@ -1,6 +1,9 @@
 package automation.test;
 
+import java.util.HashMap;
+
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import automation.TestComponents.BaseTest;
@@ -12,17 +15,16 @@ import automation.pageobjects.ProductCatalogue;
 
 
 public class SubmitOrderTest extends BaseTest{
-	String productName = "ZARA COAT 3";
 	
-	@Test
-	public void submitOrder() throws Exception {
+	@Test(dataProvider="getData", groups= {"Purchase"})
+	public void submitOrder(HashMap<String, String> input) throws Exception {
 
-		ProductCatalogue productCatalogue = landingPage.loginApplication("test.sakura@gmail.com", "Sakura@23");
+		ProductCatalogue productCatalogue = landingPage.loginApplication(input.get("email"), input.get("password"));
 		
-		productCatalogue.addProductToCart(productName);
+		productCatalogue.addProductToCart(input.get("productName"));
 		CartPage cartPage = productCatalogue.goTocart();
 		
-		boolean match = cartPage.verifyProductDisplay(productName);
+		boolean match = cartPage.verifyProductDisplay(input.get("productName"));
 		Assert.assertTrue(match);
 		CheckoutPage checkoutPage = cartPage.goToCheckoutPage();
 		
@@ -34,8 +36,24 @@ public class SubmitOrderTest extends BaseTest{
 	
 	@Test(dependsOnMethods= {"submitOrder"})
 	public void OrderHistoryTest() {
+		String productName = "ZARA COAT 3";
 		ProductCatalogue productCatalogue = landingPage.loginApplication("test.sakura@gmail.com", "Sakura@23");
 		OrderPage orderPage = productCatalogue.goToOrdersPage();
 		Assert.assertTrue(orderPage.verifyOrderDisplay(productName));
+	}
+	
+	
+	@DataProvider
+	public Object[][] getData() {
+		HashMap<String, String> hashmap = new HashMap<String, String> ();
+		hashmap.put("email","test.sakura@gmail.com");
+		hashmap.put("password","Sakura@23");
+		hashmap.put("productName", "ZARA COAT 3");
+		
+		HashMap<String, String> hashmap2 = new HashMap<String, String> ();
+		hashmap2.put("email","taro@gmail.com");
+		hashmap2.put("password","Testtaro23");
+		hashmap2.put("productName",  "ADIDAS ORIGINAL");
+		return new Object[][] {{hashmap}, {hashmap2}};
 	}
 }
