@@ -4,13 +4,14 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automation.TestComponents.BaseTest;
+import automation.TestComponents.Retry;
 import automation.pageobjects.CartPage;
 import automation.pageobjects.ProductCatalogue;
 
 public class ErrorValidationsTest extends BaseTest{ 
 	
-	@Test(groups= {"ErrorHandling"})
-	public void submitOrder() throws Exception {
+	@Test(groups= {"ErrorHandling"}, retryAnalyzer = Retry.class)
+	public void loginErrorValidation() throws Exception {
 		landingPage.loginApplication("taro@gmail.com", "Testttaro23");
 		Assert.assertEquals("Incorrect email or password.", landingPage.getErrorMessage());
 	}

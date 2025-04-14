@@ -13,6 +13,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import automation.TestComponents.BaseTest;
+import automation.TestComponents.Retry;
 import automation.pageobjects.CartPage;
 import automation.pageobjects.CheckoutPage;
 import automation.pageobjects.ConfirmationPage;
@@ -22,7 +23,7 @@ import automation.pageobjects.ProductCatalogue;
 
 public class SubmitOrderTest extends BaseTest{
 	
-	@Test(dataProvider="getData", groups= {"Purchase"})
+	@Test(dataProvider="getData", groups= {"Purchase"}, retryAnalyzer = Retry.class)
 	public void submitOrder(HashMap<String, String> input) throws Exception {
 
 		ProductCatalogue productCatalogue = landingPage.loginApplication(input.get("email"), input.get("password"));
@@ -49,13 +50,7 @@ public class SubmitOrderTest extends BaseTest{
 	}
 	
 	
-	public String getScreenshot(String testCaseName) throws IOException {
-		TakesScreenshot ts = (TakesScreenshot) driver;
-		File source = ts.getScreenshotAs(OutputType.FILE);
-		File file = new File(System.getProperty("user.dir") + "//reports//" + testCaseName + ".png");
-		FileUtils.copyFile(source, file);
-		return System.getProperty("user.dir") + "//reports//" + testCaseName + ".png";
-	}
+	
 	
 	@DataProvider
 	public Object[][] getData() throws IOException {
